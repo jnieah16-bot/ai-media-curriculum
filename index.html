@@ -477,15 +477,44 @@
     background:var(--bg-3);border:1px solid var(--line);
     transition:all .4s;position:relative;overflow:hidden;
     display:flex;flex-direction:column;
+    text-decoration:none;color:inherit;
   }
   .tech-card::before{
     content:'';position:absolute;inset:0;
     background:var(--grad);opacity:0;transition:opacity .4s;
     z-index:0;
   }
+  a.tech-card::after{
+    content:'↗';position:absolute;top:24px;right:24px;
+    font-size:18px;color:var(--dim);
+    transition:all .3s ease;z-index:2;
+  }
   .tech-card:hover{transform:translateY(-6px);border-color:transparent}
   .tech-card:hover::before{opacity:.08}
+  a.tech-card:hover::after{color:var(--accent);transform:translate(3px,-3px)}
   .tech-card > *{position:relative;z-index:1}
+
+  .tech-links{
+    margin-top:20px;padding-top:20px;
+    border-top:1px solid var(--line);
+    display:flex;flex-wrap:wrap;gap:8px;
+  }
+  .tech-link-pill{
+    display:inline-flex;align-items:center;gap:6px;
+    padding:8px 14px;border-radius:10px;
+    background:rgba(255,255,255,0.04);
+    border:1px solid rgba(255,255,255,0.08);
+    font-size:13px;font-weight:600;letter-spacing:0.01em;
+    color:var(--text);text-decoration:none;
+    transition:all .25s ease;
+  }
+  .tech-link-pill .arr{color:var(--dim);font-size:12px;transition:all .25s}
+  .tech-link-pill:hover{
+    background:rgba(255,61,110,0.1);
+    border-color:rgba(255,61,110,0.4);
+    color:var(--accent);
+  }
+  .tech-link-pill:hover .arr{color:var(--accent);transform:translate(2px,-2px)}
 
   .tech-icon{
     width:56px;height:56px;border-radius:14px;
@@ -1048,52 +1077,60 @@
     </div>
 
     <div class="tech-grid">
-      <div class="tech-card reveal">
+      <a class="tech-card reveal" href="https://aws.amazon.com/" target="_blank" rel="noopener noreferrer" aria-label="AWS 홈페이지 열기">
         <div class="tech-icon">☁️</div>
         <div class="tech-brand">AWS</div>
         <div class="tech-name">클라우드 미디어 인프라</div>
         <div class="tech-desc">대용량 8K 원본 저장·처리부터 생성형 AI 추론까지, 전 과정의 백엔드를 안정적으로 운영합니다.</div>
         <div class="tech-spec"><span>Cloud Storage</span><span>AI/ML</span><span>Media Services</span></div>
-      </div>
+      </a>
 
-      <div class="tech-card reveal">
+      <a class="tech-card reveal" href="https://www.canon.com/" target="_blank" rel="noopener noreferrer" aria-label="Canon 홈페이지 열기">
         <div class="tech-icon">🎬</div>
         <div class="tech-brand">Canon</div>
         <div class="tech-name">MCO 멀티캠 시스템</div>
         <div class="tech-desc">Multi Camera Orchestration으로 다수 카메라를 통합 운영, 직캠 워크플로우를 표준화합니다.</div>
         <div class="tech-spec"><span>Multi-Cam</span><span>Sync</span><span>오케스트레이션</span></div>
-      </div>
+      </a>
 
-      <div class="tech-card reveal">
+      <a class="tech-card reveal" href="https://connect.panasonic.com/" target="_blank" rel="noopener noreferrer" aria-label="Panasonic Connect 홈페이지 열기">
         <div class="tech-icon">🎯</div>
         <div class="tech-brand">Panasonic</div>
         <div class="tech-name">PTZ AI프레이밍</div>
         <div class="tech-desc">AI가 토크쇼 출연자를 자동 추적·프레이밍하며 다각도 앵글로 멀티캠 녹화를 수행합니다.</div>
         <div class="tech-spec"><span>AI 추적</span><span>PTZ</span><span>토크쇼 큐</span></div>
-      </div>
+      </a>
 
-      <div class="tech-card reveal">
+      <a class="tech-card reveal" href="https://vvertigo.com/" target="_blank" rel="noopener noreferrer" aria-label="VVERTIGO 홈페이지 열기">
         <div class="tech-icon">✂️</div>
         <div class="tech-brand">VVERTIGO</div>
         <div class="tech-name">AI 리프레이밍 편집</div>
         <div class="tech-desc">8K 세로캠과 PTZ 얼굴 초근접샷을 AI가 자동 리프레이밍·편집해 직캠 영상을 완성합니다.</div>
         <div class="tech-spec"><span>자동 편집</span><span>리프레이밍</span><span>세로캠</span></div>
-      </div>
+      </a>
 
-      <div class="tech-card reveal">
+      <a class="tech-card reveal" href="https://elevenlabs.io/" target="_blank" rel="noopener noreferrer" aria-label="ElevenLabs 홈페이지 열기">
         <div class="tech-icon">🎙️</div>
         <div class="tech-brand">ElevenLabs</div>
         <div class="tech-name">AI 오디오 분리 · 더빙</div>
         <div class="tech-desc">액터별 음성 분리·클린업, AI 더빙과 립싱크로 배역 대사를 자유롭게 교체합니다.</div>
         <div class="tech-spec"><span>음성 분리</span><span>AI 더빙</span><span>립싱크</span></div>
-      </div>
+      </a>
 
       <div class="tech-card reveal">
         <div class="tech-icon">🤖</div>
-        <div class="tech-brand">Generative AI</div>
-        <div class="tech-name">100% 생성형 AI VCR</div>
-        <div class="tech-desc">비디오 · 오디오 · 대역배우까지 전 구간을 생성형 AI로 완성하는 재연 VCR 파이프라인.</div>
-        <div class="tech-spec"><span>Text-to-Video</span><span>대역배우</span><span>완성형 VCR</span></div>
+        <div class="tech-brand">KLING · MAGNIFIC</div>
+        <div class="tech-name">생성형 AI VCR 제작</div>
+        <div class="tech-desc">KLING으로 영상을 생성하고 MAGNIFIC으로 디테일·해상도를 보강해 100% AI 재연 VCR을 완성합니다.</div>
+        <div class="tech-spec"><span>Text-to-Video</span><span>업스케일</span><span>완성형 VCR</span></div>
+        <div class="tech-links">
+          <a class="tech-link-pill" href="https://www.klingai.com/" target="_blank" rel="noopener noreferrer">
+            KLING <span class="arr">↗</span>
+          </a>
+          <a class="tech-link-pill" href="https://magnific.ai/" target="_blank" rel="noopener noreferrer">
+            MAGNIFIC <span class="arr">↗</span>
+          </a>
+        </div>
       </div>
     </div>
   </div>
